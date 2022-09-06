@@ -1,0 +1,47 @@
+:root {
+
+    --color-primary: #8884FF;
+    --color-primary2: #d1e3ff;
+    --color-primary3: #a6c7fa00;
+    --color-menu-mobile:#111826d1;
+    /*--------------------------*/
+    --color-ti-back:#0095ff66;
+    --color-ti-text:#070066;
+    /*--------------------------*/
+    --color-food-back:#ffc7ddd1;
+    --color-food-text:#660008;
+    /*--------------------------*/
+    --color-others-back:#a9fffe;
+    --color-others-text:#022c00;
+    /*--------------------------*/
+    --color-attEmp-text: #000000;
+    --color-attEmp-back: #a1ffa5;
+    /*--------------------------*/
+    --color-closeEmp-text: #fff;
+    --color-closeEmp-back: #f10029;
+    /*--------------------------*/
+    --color-unEmp-text: #010101;
+    --color-unEmp-back: #ffd3bb;
+
+
+
+    --ligth-black2: #5D576B;
+    --ligth-gray: #f1f3f5;
+
+    
+    --dark-black: #111826;
+    --dark-gray: #868E96;
+
+    --white: #ffffff;
+
+    --radius: 8px;
+    --radius2: 4px;
+
+    --font-size-title: 1.5rem;
+    --font-weigth: 600;
+
+    --font-size-text: 1rem;
+    --font-size-text2: .90rem;
+
+    --font-family: 'Montserrat', sans-serif;
+}

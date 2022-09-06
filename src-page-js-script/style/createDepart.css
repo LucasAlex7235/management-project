@@ -1,0 +1,213 @@
+header{
+    height: 80px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.container__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90vw;
+    /* background-color: aqua; */
+    height: 50px;
+    margin: 0 auto;
+}
+
+.container__nav figure {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.container__nav figure img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.container__nav figure .scroolProfile {
+    position: absolute;
+    left: -150%;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--color-menu-mobile);
+    top: 78px;
+    height: 150px;
+    justify-content: center;
+    width: 50%;
+    align-items: center;
+    border-radius: 0 8px 8px 0;
+}
+
+
+.container__nav #menuMobile {}
+
+
+.container__nav #mobileOptions {
+    /* display: none; */
+    position: absolute;
+    right: -150%;
+    top: 78px;
+    height: 400px;
+    width: 50%;
+    background-color: var(--color-menu-mobile);
+    padding: 20px 10px;
+    border-radius: 8px 0 0 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.container {
+    /* width: 90vw; */
+    /* margin: 50px auto 0; */
+    background-color: var(--ligth-gray);
+    height: 100vh;
+    display: flex;
+    align-items:flex-start;
+    justify-content: center;
+}
+
+.form {
+    margin-top: 40px;
+    width: 80%;
+    height: 500px;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: var(--white);
+    border-radius: var(--radius);
+}
+
+
+
+.form--data {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form--data .form--input {
+    height: 35px;
+    border-radius: var(--radius2);
+    border: 1px solid var(--ligth-gray);
+    padding: 16px 10px;
+}
+
+.form--data .form--input__description {
+    height: 100px;
+    border-radius: var(--radius2);
+    border: 1px solid var(--ligth-gray);
+    padding: 16px 10px;
+}
+
+.form--data__hours__areas {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form--data__hours__areas .hours {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form--data__hours__areas .hours .form--input__hours {
+    width: 50px;
+    border: 1px solid;
+    padding: 5px 10px;
+    border-radius: var(--radius2);
+}
+
+.form--data__hours__areas .hours .form--input__hours:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+.form--data__hours__areas .areas{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form--data__hours__areas .areas select:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+/*----TEXT--------------*/
+
+.container__nav figure h1 {
+    font-size: var(--font-size-text);
+    font-weight: var(--font-weigth);
+    font-family: var(--font-family);
+}
+.container__nav #mobileOptions li{
+    font-size: var(--font-size-text);
+    font-weight: var(--font-weigth);
+    font-family: var(--font-family);
+    color: var(--white);
+}
+
+.form > h3{
+    font-weight: var(--font-weigth);
+    font-size: var(--font-size-title);
+    font-family: var(--font-family);
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.form--label{
+    font-size: var(--font-size-text2);
+    font-weight: var(--font-weigth);
+    font-family: var(--font-family);
+}
+
+.form--label__hours{
+    font-size: var(--font-size-text2);
+    font-weight: var(--font-weigth);
+    font-family: var(--font-family);
+}
+
+.areas h3{
+    font-size: var(--font-size-text2);
+    font-weight: var(--font-weigth);
+    font-family: var(--font-family);
+}
+
+.form--data__hours__areas .areas select{
+    padding: 10px;
+    border: 1px solid transparent;
+    border-radius: var(--radius2);
+    font-size: var(--font-size-text2);
+    font-family: var(--font-family);
+}
+
+
+/*----BUTTON--------------*/
+#submitData{
+    margin-top: 20px;
+    height: 35px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    background-color: var(--dark-black);
+    color: var(--white);
+    font-weight: var(--font-weigth);
+    font-family: var(--font-family);
+    cursor: pointer;
+}
+
+.container__nav figure .scroolProfile button{
+    border: 1px solid transparent;
+    background-color: transparent;
+    color: var(--white);
+
+    font-size: var(--font-size-text2);
+    font-weight: var(--font-weigth);
+    font-family: var(--font-family);
+}
