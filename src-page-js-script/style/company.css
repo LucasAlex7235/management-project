@@ -27,8 +27,9 @@ header {
 
 .container__nav figure .scroolProfile {
     position: absolute;
-    left: -150%;
-    display: none;
+    left: 0;
+    z-index: 1;
+    display: flex;
     flex-direction: column;
     gap: 20px;
     background-color: var(--color-menu-mobile);
@@ -38,6 +39,8 @@ header {
     width: 50%;
     align-items: center;
     border-radius: 0 8px 8px 0;
+    animation: profileMobileOpen .50s ease;
+
 }
 
 .container__nav #mobileOptions {
@@ -49,11 +52,37 @@ header {
     background-color: var(--color-menu-mobile);
     padding: 20px 10px;
     border-radius: 8px 0 0 8px;
-    display: none;
+    display: flex;
+    z-index: 1;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    animation: menuMobileOpen .50s ease;
 }
+
+@keyframes menuMobileOpen {
+    0% {
+        height: 0;
+        top: 0;
+
+        transform: translateX(120%);
+
+    }
+}
+
+@keyframes profileMobileOpen {
+    0% {
+        height: 0;
+        top: 0;
+        transform: translateX(-120%);
+
+    }
+}
+
+.hidden {
+    display: none !important;
+}
+
 
 .container {
     margin: 0 auto;
@@ -95,13 +124,13 @@ header {
     margin-bottom: 20px;
 }
 
-.vitrine__job li .employee__footer{
+.vitrine__job li .employee__footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.vitrine__job li .unemployed__footer{
+.vitrine__job li .unemployed__footer {
     display: flex;
     justify-content: center;
 }
@@ -149,7 +178,7 @@ header {
     font-family: var(--font-family);
 }
 
-.colunm .colunm__content{
+.colunm .colunm__content {
     font-size: var(--font-size-text2);
     font-family: var(--font-family);
 }
@@ -204,15 +233,17 @@ header {
     cursor: pointer;
 }
 
-.att__employee{
+.att__employee {
     color: var(--color-attEmp-text);
     background-color: var(--color-attEmp-back);
 }
-.close__employee{
+
+.close__employee {
     color: var(--color-closeEmp-text);
     background-color: var(--color-closeEmp-back);
 }
-.unemployee{
+
+.unemployee {
     width: 100%;
     color: var(--color-unEmp-text);
     background-color: var(--color-unEmp-back);

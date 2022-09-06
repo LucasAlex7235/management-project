@@ -27,8 +27,8 @@ header {
 
 .container__nav figure .scroolProfile {
     position: absolute;
-    left: -150%;
-    display: none;
+    left: 0;
+    display: flex;
     flex-direction: column;
     gap: 20px;
     background-color: var(--color-menu-mobile);
@@ -38,6 +38,7 @@ header {
     width: 50%;
     align-items: center;
     border-radius: 0 8px 8px 0;
+    animation: profileMobileOpen .50s ease;  
 }
 
 .container__nav #mobileOptions {
@@ -49,10 +50,35 @@ header {
     background-color: var(--color-menu-mobile);
     padding: 20px 10px;
     border-radius: 8px 0 0 8px;
-    display: none;
+    display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
+    animation: menuMobileOpen .50s ease;
+}
+
+@keyframes menuMobileOpen {
+    0%{
+        height: 0;  
+        top: 0; 
+        
+        transform: translateX(120%);
+        
+    }
+}
+
+@keyframes profileMobileOpen {
+    0%{
+        height: 0;  
+        top: 0; 
+        
+        transform: translateX(-120%);
+        
+    }
+}
+
+.hidden{
+    display: none !important;
 }
 
 .container {

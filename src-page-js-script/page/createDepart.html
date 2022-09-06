@@ -22,7 +22,7 @@
             <figure>
                 <img src="../assets/img/105-1053345_comment-from-dj-buck-perfil-anonimo.png" alt="">
                 <h1>Name user</h1>
-                <div class="scroolProfile">
+                <div class="scroolProfile hidden">
                     <button id="configProfile">Configurações</button>
                     <button id="exitProfile">Sair</button>
                 </div>
@@ -30,7 +30,7 @@
 
             <span id="menuMobile" class="material-symbols-outlined">Menu</span>
 
-            <ul id="mobileOptions">
+            <ul id="mobileOptions" class="hidden">
                 <li>Cadastrar empresa</li>
                 <li>Banco de talentos</li>
                 <li>Todos os usuarios</li>
@@ -41,6 +41,22 @@
     </header>
 
     <main class="container">
+
+        <div class="modal__backgroud__dashboard hidden">
+            <div class="modal__dashboard">
+                <header>
+                    <h1>Admin</h1>
+                    <span id="menuMobile" class="material-symbols-outlined">close</span>
+                </header>
+                <div class="content">
+                    <p>Departamento criado com sucesso!</p>
+                </div>
+                <div class="footer">
+                    <button>Fechar</button>
+                </div>
+            </div>
+        </div>
+
         <form class="form">
             <h3>Cadastre seu departamento</h3>
             <div class="form--data">
@@ -83,7 +99,7 @@
 
 
 
-
+<!-- 
 
 
 [
@@ -134,4 +150,4 @@
 	"opening_hours": "09:00",
 	"description": "Kenzie kenzie kenzie",
 	"sector_uuid": "17247c6b-5205-4067-9695-278fcb97d592"
-}
+} -->

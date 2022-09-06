@@ -30,7 +30,7 @@
 
             <span id="menuMobile" class="material-symbols-outlined">Menu</span>
 
-            <ul id="mobileOptions">
+            <ul id="mobileOptions" class="hidden">
                 <li>Cadastrar empresa</li>
                 <li>Banco de talentos</li>
                 <li>Todos os usuarios</li>
@@ -41,6 +41,22 @@
     </header>
 
     <main class="container">
+
+        <div class="modal__backgroud__dashboard hidden">
+            <div class="modal__dashboard">
+                <header>
+                    <h1>Admin</h1>
+                    <span id="menuMobile" class="material-symbols-outlined">close</span>
+                </header>
+                <div class="content">
+                    <p>Cadastro realizado com sucesso!</p>
+                </div>
+                <div class="footer">
+                    <button>Fechar</button>
+                </div>
+            </div>
+        </div>
+
         <form class="form">
             <h3>Cadastre sua empresa</h3>
             <div class="form--data">
