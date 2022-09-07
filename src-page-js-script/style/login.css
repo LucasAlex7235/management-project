@@ -1,6 +1,7 @@
 body {
     height: 100vh;
 }
+
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;0,700;1,300;1,400;1,600&display=swap');
 
 
@@ -48,6 +49,11 @@ body {
 
 }
 
+.form--input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
 .form--forgot__password {
     position: relative;
 }
@@ -81,6 +87,12 @@ body {
     font-weight: var(--font-weigth);
     font-family: var(--font-family);
     cursor: pointer;
+    transition: .5s;
+}
+
+.submit:hover {
+    background-color: var(--color-primary);
+    transition: .5s;
 }
 
 .form--footer span {
@@ -89,6 +101,12 @@ body {
     cursor: pointer;
     font-size: var(--font-size-text2);
     font-family: var(--font-family);
+    transition: .5s;
+}
+
+.form--footer span:hover {
+    color: var(--color-primary);
+    transition: .5s;
 }
 
 /*-----------TEXT----------*/
@@ -123,6 +141,7 @@ body {
     font-family: var(--font-family);
     cursor: pointer;
 }
+
 .submit {
     height: 35px;
     border-radius: 8px;
@@ -137,4 +156,31 @@ body {
     color: var(--dark-gray);
     font-size: var(--font-size-text2);
     font-family: var(--font-family);
+
+}
+
+@media (min-width: 768px) {
+
+    .container {
+        display: flex;
+        gap: 180px;
+    }
+
+    .figure {
+        display: flex;
+        height: 600px;
+        width: 400px;
+        /* margin-right: 192px; */
+    }
+
+    .figure img {
+        height: 100%;
+        border-radius: 8px;
+    }
+
+    .form {
+        height: 600px;
+        width: 420px;
+    }
+
 }

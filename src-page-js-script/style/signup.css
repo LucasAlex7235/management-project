@@ -72,6 +72,11 @@
 
 }
 
+.form--input:focus {
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
 .form--forgot__password {
     position: relative;
 }
@@ -105,6 +110,13 @@
     font-weight: var(--font-weigth);
     font-family: var(--font-family);
     cursor: pointer;
+    transition: .5s;
+
+}
+
+.submit:hover {
+    background-color: var(--color-primary);
+    transition: .5s;
 }
 
 .form--footer span {
@@ -113,8 +125,13 @@
     cursor: pointer;
     font-size: var(--font-size-text2);
     font-family: var(--font-family);
+    transition: .5s;
 }
 
+.form--footer span:hover {
+    color: var(--color-primary);
+    transition: .5s;
+}
 /*-----------TEXT----------*/
 
 
@@ -161,4 +178,15 @@
     color: var(--dark-gray);
     font-size: var(--font-size-text2);
     font-family: var(--font-family);
+}
+
+
+
+@media (min-width: 768px) {
+
+    .form {
+        height: 600px;
+        width: 420px;
+    }
+
 }
