@@ -52,16 +52,16 @@ class Company {
             spanContent2.classList.add("colunm__content")
 
             divBtnFooter.classList.add("footer__btnModal")
-            
+
             createOpenModal.setAttribute("id", "createDep")
             btnOpenModal.setAttribute("id", "openJob")
 
 
             name.innerText = "Empresa"
             departPrimary.innerText = elem.sectors.description
-            elem.sectors.description == "TI" ? departPrimary.setAttribute("id", "tiCard") : 
-            elem.sectors.description == "Alimenticio" ? departPrimary.setAttribute("id", "foodCard"):
-            elem.sectors.description == "Automotiva" ? departPrimary.setAttribute("id", "autoCard"): ""
+            elem.sectors.description == "TI" ? departPrimary.setAttribute("id", "tiCard") :
+                elem.sectors.description == "Alimenticio" ? departPrimary.setAttribute("id", "foodCard") :
+                    elem.sectors.description == "Automotiva" ? departPrimary.setAttribute("id", "autoCard") : ""
 
             spanTitle1.innerText = "Nome da empresa:"
             spanContent1.innerText = elem.name
@@ -76,9 +76,9 @@ class Company {
             btnOpenModal.innerText = "Abrir"
 
 
-            divBtnFooter.append(createOpenModal,btnOpenModal)
+            divBtnFooter.append(createOpenModal, btnOpenModal)
             select.append(options)
-            divColunm3.append(depart,select)
+            divColunm3.append(depart, select)
             divColunm2.append(spanTitle2, spanContent2)
             divColunm1.append(spanTitle1, spanContent1)
             divContainer.append(divColunm1, divColunm2, divColunm3)
@@ -91,28 +91,33 @@ class Company {
         this.openModal()
     }
 
-    static openModal(){
+    static openModal() {
         const btnOpenModal = document.querySelectorAll("#openJob")
+        const btnCreateDep = document.querySelectorAll("#createDep")
         const modal = document.querySelector(".modal__backgroud__dashboard")
         const modalVitrine = document.querySelector(".depart__vitrine")
         const btnCloseModal = document.querySelector("#footer--btnClose")
 
-        
-        btnOpenModal.forEach(btn =>{
-            btn.addEventListener("click", async(event)=>{
+        const create = document.querySelector(".modal__backgroud__dashboard--create__depart")
+        const createVitrine = create.querySelector(".depart__vitrine")
+        const submitBtn = document.querySelectorAll("#footer--btnCloseCreate")
+        const closeModalCreateDep = document.querySelectorAll("#closeModalCreateDep")
+
+        btnOpenModal.forEach(btn => {
+            btn.addEventListener("click", async (event) => {
                 event.preventDefault()
                 const idModal = btn.parentElement.parentElement.id
-                
+
                 const departContent = await Request.newListDepartCompany(idModal)
-                
+
                 modalVitrine.innerHTML = ""
                 modal.classList.toggle("hidden")
 
-                departContent.forEach((depart)=>{
-                    
+                departContent.forEach((depart) => {
+
                     const namedepart = depart.name
                     const descriDepart = depart.description
-                    
+
                     const divColunm = document.createElement("div")
                     const spanName = document.createElement("span")
                     const spandescrip = document.createElement("span")
@@ -123,41 +128,71 @@ class Company {
 
                     spanName.innerText = namedepart
                     spandescrip.innerText = descriDepart
-                    
+
                     divColunm.append(spanName, spandescrip)
                     modalVitrine.append(divColunm)
-                })                
+                })
             })
         })
 
+        btnCreateDep.forEach(btn => {
+            btn.addEventListener("click", async (event) => {
+                event.preventDefault()
+                const idModal = btn.parentElement.parentElement.id
+                createVitrine.setAttribute("id", idModal)
+                create.classList.toggle("hidden")
+            })
+        })
 
+        submitBtn.forEach(btn => {
+            btn.addEventListener("click", async() => {
+                const nameDep = createVitrine.querySelector("input").value
+                const descripDep = createVitrine.querySelector("textarea").value
+                const id = btn.parentElement.parentElement.querySelector(".depart__vitrine").id
 
-        btnCloseModal.addEventListener("click", ()=>{
+                const data = {
+                    "name": nameDep,
+                    "description": descripDep,
+                    "company_uuid": id
+                }
+
+                const createDeparApi = await Request.newCreatDepart(data)
+                console.log(id)
+            })
+        })
+
+        closeModalCreateDep.forEach(btn => {
+            btn.addEventListener("click", ()=>{
+                create.classList.toggle("hidden")
+            })
+        })
+
+        btnCloseModal.addEventListener("click", () => {
             modal.classList.toggle("hidden")
         })
     }
 
-    static sectionsPage(){
+    static sectionsPage() {
         const creatCompany = document.querySelector("#createCompany")
         const allDepart = document.querySelector("#allDepart")
         const allUsers = document.querySelector("#allUsers")
         const unemployedUsers = document.querySelector("#unemployedUsers")
 
-        creatCompany.addEventListener("click", (event)=>{
+        creatCompany.addEventListener("click", (event) => {
             window.location.assign("./dashboard.html")
             console.log(1)
         })
 
-        allDepart.addEventListener("click", (event)=>{
+        allDepart.addEventListener("click", (event) => {
             window.location.assign("./departments.html")
         })
 
-        allUsers.addEventListener("click", (event)=>{
+        allUsers.addEventListener("click", (event) => {
             window.location.assign("./company.html")
             localStorage.setItem("@kenzieJob:AllUsers", true)
         })
 
-        unemployedUsers.addEventListener("click", (event)=>{
+        unemployedUsers.addEventListener("click", (event) => {
             window.location.assign("./company.html")
             localStorage.setItem("@kenzieJob:AllUsers", false)
         })

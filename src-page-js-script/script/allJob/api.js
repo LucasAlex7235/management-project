@@ -29,5 +29,17 @@ export class Request {
 
         return departCompany
     }
+
+    static async newCreatDepart(body){
+        const createDep = await fetch(`${this.baseUrl}/departments`,{
+            method: "POST",
+            headers: this.headers,
+            body: JSON.stringify(body)
+        })
+        .then(res => res.json())
+        .then(res => res)
+        .catch(err => console.log(err))
+
+    }
      
 }
