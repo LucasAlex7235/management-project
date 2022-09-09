@@ -1,24 +1,29 @@
 import User from "../database/models/user.js"
 import pkgBcrypt from 'bcryptjs'
+import Helper from "./helper.js";
 const { hash } = pkgBcrypt;
 
 
 const updateUserService = async (password, email, username, uuid) => {
 
     const user = await User.findByPk(uuid)
-    if(user && password){
+
+    if(user && email){
+   
         user.update({
-            username,
-            password: await hash(password, 8),
-            email
+            username: username || user.username,
+            password: await hash(password, 8) || user.password,
+            email: email || user.email
         })
+
     } else if(user){
         user.update({
-            username,
-            password,
-            email
+            username: username || user.username,
+            password: await hash(password, 8) || user.password,
         })
+
     }
+
 
     return user
 

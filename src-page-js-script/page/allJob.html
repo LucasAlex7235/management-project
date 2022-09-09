@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,15 +12,20 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!-- LOCAL/CSS -->
     <link rel="stylesheet" href="../style/allJob.css">
+    <!-- SCRIPT -->
+    <script defer type="module" src="../script/allJob/index.js"></script>
+    <script defer type="module" src="../script/allJob/api.js"></script>
+
     <title>Document</title>
 </head>
+
 <body>
     <header>
         <nav class="container__nav">
             <figure>
                 <img src="../assets/img/105-1053345_comment-from-dj-buck-perfil-anonimo.png" alt="">
                 <h1>Name user</h1>
-                <div class="scroolProfile">
+                <div class="scroolProfile hidden">
                     <button id="configProfile">Configurações</button>
                     <button id="exitProfile">Sair</button>
                 </div>
@@ -28,18 +34,83 @@
             <span id="menuMobile" class="material-symbols-outlined">Menu</span>
 
             <ul id="mobileOptions" class="hidden">
-                <li>Cadastrar empresa</li>
-                <li>Áreas</li>
-                <li>Todas as empresas</li>
+                <li id="createCompany">Cadastrar empresa</li>
+                <li id="unemployedUsers">Banco de talentos</li>
+                <li id="allUsers">Todos os usuarios</li>
+                <li id="allDepart">Departamentos</li>
+                <li id="select">Todas as empresas</li>
             </ul>
         </nav>
+
+
     </header>
 
     <main class="container">
         <ul class="vitrine__job">
-            
 
-            <li>
+            <div class="modal__backgroud__dashboard hidden">
+                <div class="modal__dashboard">
+                    <header>
+                        <h1>Admin</h1>
+                        <span id="menuMobile" class="material-symbols-outlined">close</span>
+                    </header>
+                    <h3>Departamentos</h3>
+                    <div class="content">
+                        <div class="depart__vitrine">
+                            <!-- <div class="colunm">
+                                <span class="name__depart">Nome</span>
+                                <span class="descrip__depart">descri</span>
+                            </div>
+                            <div class="colunm">
+                                <span class="name__depart">Nome</span>
+                                <span class="descrip__depart">descri</span>
+                            </div>
+                        </div> -->
+                        </div>
+                        <div class="footer">
+                            <button id="footer--btnClose">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="modal__backgroud__dashboard--create__depart ">
+                <div class="modal__dashboard">
+                    <header>
+                        <h1>Criar departamento</h1>
+                        <span id="menuMobile" class="material-symbols-outlined">close</span>
+                    </header>
+                    <h3>Departamentos</h3>
+                    <div class="content">
+                        <div class="depart__vitrine">
+                            <form action="">
+
+                                <div class="colunm">
+                                    <label for="">Nome do departamento:</label>
+                                    <input type="text">
+                                </div>
+
+                                <div class="colunm">
+                                    <label for="">Descrição do departamento:</label>
+                                    <textarea name="" id="" cols="30" rows="10" placeholder="Exemplo: Responsavel pelo sistema elétrico..."></textarea>
+                                </div>
+
+                                <div class="colunm">
+                                    <h3>Selecione a empresa:</h3>
+                                    <select name="" id="">
+                                        <option value="">Empresas</option>
+                                    </select>
+                                </div>
+
+                            </form>
+                        </div>
+                        <div class="footer">
+                            <button id="footer--btnCloseCreate">Criar</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- <li>
                 <header>
                     <div class="name__job">
                         <h3>Empresa</h3>
@@ -174,10 +245,11 @@
                     </div>
                 </div>
                 <button id="openJob">Abrir</button>
-            </li>
+            </li> -->
 
-            
+
         </ul>
     </main>
 </body>
+
 </html>

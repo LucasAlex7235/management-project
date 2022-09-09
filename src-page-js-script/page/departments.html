@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -11,8 +12,13 @@
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <!-- LOCAL/CSS -->
     <link rel="stylesheet" href="../style/departments.css">
+    <!-- SCRIPT -->
+    <script defer type="module" src="../script/departments/index.js"></script>
+    <script defer type="module" src="../script/departments/api.js"></script>
+
     <title>Document</title>
 </head>
+
 <body>
     <header>
         <nav class="container__nav">
@@ -28,18 +34,53 @@
             <span id="menuMobile" class="material-symbols-outlined">Menu</span>
 
             <ul id="mobileOptions" class="hidden">
-                <li>Cadastrar empresa</li>
-                <li>Áreas</li>
-                <li>Todas as empresas</li>
+                <li id="createCompany">Cadastrar empresa</li>
+                <li id="unemployedUsers">Banco de talentos</li>
+                <li id="allUsers">Todos os usuarios</li>
+                <li id="select">Departamentos</li>
+                <li id="allCompanies">Todas as empresas</li>
             </ul>
         </nav>
     </header>
 
     <main class="container">
         <ul class="vitrine__job">
-            
 
-            <li>
+            <div class="modal__backgroud__dashboard hidden">
+                <div class="modal__dashboard--edit">
+                    <header>
+                        <h1>Editar</h1>
+                        <span id="closeModalEdit" class="material-symbols-outlined">close</span>
+                    </header>
+                    <h3 id="nameDep">Nome</h3>
+                    <div class="content">
+                        <h3>Descrição:</h3>
+                        <textarea name="" id="" cols="30" rows="4"
+                            placeholder="Digite nova descrição do departamento..."></textarea>
+                        <div class="footer">
+                            <button id="footer--btnClose">Enviar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="modal__backgroud__dashboard--delete hidden">
+                <div class="modal__dashboard--edit">
+                    <header>
+                        <h1>Deletar</h1>
+                        <span id="closeModalDelet" class="material-symbols-outlined">close</span>
+                    </header>
+                    <h3>Deseja deletar departamento?</h3>
+                    <div class="content">
+                        <div class="footer__delete">
+                            <button id="footer--btnClose--delete">Sim</button>
+                            <button id="footer--btnClose--close">Não</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- <li>
                 <header>
                     <div class="name__job">
                         <h3>RH</h3>
@@ -63,11 +104,12 @@
                     <button id="edit__dep__btn" class="btn__edit__dep">Editar</button>
                     <button id="delete__dep__btn" class="btn__edit__dep">Deletar</button>
                 </footer>
-            </li>
+            </li> -->
 
 
-            
+
         </ul>
     </main>
 </body>
+
 </html>

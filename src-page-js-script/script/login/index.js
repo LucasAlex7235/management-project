@@ -23,7 +23,10 @@ class Login {
             const loginToken = await Request.loginUser(data)
             const token = localStorage.setItem("@kenzieJob:token", loginToken.token)
             const userId = localStorage.setItem("@kenzieJob:User_id", loginToken.uuid)
-            window.location.assign("./src-page-js-script/page/dashboard.html")
+            if(loginToken["is_admin"] == true){
+                window.location.assign("./src-page-js-script/page/dashboard.html")
+            }
+            
         })
     }
 }
