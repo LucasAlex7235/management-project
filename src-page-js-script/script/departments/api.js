@@ -30,5 +30,15 @@ export class Request {
         .catch(err => console.log(err))
 
     }
+
+    static async deleteDepart(id){
+        const delet = await fetch(`${this.baseUrl}/departments/${id}`, {
+            method: "DELETE",
+            headers: this.headers
+        })
+        .then(res => res.json())
+        .then(res => res)
+        .catch(err => console.log(err))
+    }
      
 }

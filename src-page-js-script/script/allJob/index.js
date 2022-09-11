@@ -193,7 +193,7 @@ class Company {
         })
 
         unemployedUsers.addEventListener("click", (event) => {
-            window.location.assign("./company.html")
+            window.location.assign("./hireCompany.html")
             localStorage.setItem("@kenzieJob:AllUsers", false)
         })
 

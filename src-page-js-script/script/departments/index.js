@@ -89,7 +89,10 @@ class Departments {
         const modalEdit = document.querySelector(".modal__backgroud__dashboard")
         const modalDelete = document.querySelector(".modal__backgroud__dashboard--delete")
         const btnEdit = document.querySelectorAll("#edit__dep__btn")
+
         const btnDelete = document.querySelectorAll("#delete__dep__btn")
+        const deletConfir = document.querySelector("#footer--btnClose--delete")
+        const deletNotConfir = document.querySelector("#footer--btnClose--close")
         const submitEdit = document.querySelector("#footer--btnClose")
 
         const closeModalEdit = document.querySelector("#closeModalEdit")
@@ -116,12 +119,54 @@ class Departments {
             Request.newEditDepart(id, data)
         })
 
-        closeModalEdit.addEventListener("click", ()=>{
+        closeModalEdit.addEventListener("click", () => {
             modalEdit.classList.toggle("hidden")
         })
 
+        btnDelete.forEach((btnDelet) => {
+            btnDelet.addEventListener("click", () => {
+                modalDelete.classList.toggle("hidden")
+
+                deletConfir.addEventListener("click", () => {
+                    const idDelet = btnDelet.parentElement.parentElement.id
+                    Request.deleteDepart(idDelet)
+                })
+            })
+        })
+
+        deletNotConfir.addEventListener("click", () => {
+            modalDelete.classList.toggle("hidden")
+        })
+
+
+    }
+
+    static sectionsPage() {
+        const creatCompany = document.querySelector("#createCompany")
+        const allUsers = document.querySelector("#allUsers")
+        const unemployedUsers = document.querySelector("#unemployedUsers")
+        const allCompan = document.querySelector("#allCompanies")
+
+        creatCompany.addEventListener("click", (event) => {
+            window.location.assign("./dashboard.html")
+        })
+
+        allUsers.addEventListener("click", (event) => {
+            window.location.assign("./company.html")
+            localStorage.setItem("@kenzieJob:AllUsers", true)
+        })
+
+        unemployedUsers.addEventListener("click", (event) => {
+            window.location.assign("./hireCompany.html")
+            localStorage.setItem("@kenzieJob:AllUsers", false)
+        })
+
+        allCompan.addEventListener("click", (event)=>{
+            window.location.assign("./allJob.html")
+        })
 
     }
 }
 
 Departments.listDepart()
+Departments.sectionsPage()
