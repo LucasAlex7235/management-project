@@ -191,4 +191,4 @@ class Users {
 Users.listUsers()
 Users.sectionsPage()
 Users.closeUser()
-Users.openMenuMobileUser() 
+Users.openMenuMobileUser()  
