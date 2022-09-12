@@ -61,7 +61,26 @@ class Dashboard {
 
 
     }
+
+    static closeUser() {
+        const close = document.querySelector("figure")
+        const menuExit = document.querySelector(".scroolProfile")
+        const exit = document.querySelector("#exitProfile")
+
+
+
+
+        close.addEventListener("click", () => {
+            menuExit.classList.toggle("hidden")
+            exit.addEventListener("click", () => {
+                window.location.assign("../../index.html")
+            })
+        })
+
+
+    }
 }
 
 Dashboard.createCompany()
 Dashboard.sectionsPage()
+Dashboard.closeUser()

@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,17 +15,17 @@
     <!-- SCRIPT -->
     <script defer type="module" src="../script/company/index.js"></script>
     <script defer type="module" src="../script/company/api.js"></script>
-    
+
     <title>Document</title>
 </head>
+
 <body>
     <header>
         <nav class="container__nav">
-            <figure>
+            <figure id="closeUserAdmin">
                 <img src="../assets/img/105-1053345_comment-from-dj-buck-perfil-anonimo.png" alt="">
                 <h1>Name user</h1>
                 <div class="scroolProfile hidden">
-                    <button id="configProfile">Configurações</button>
                     <button id="exitProfile">Sair</button>
                 </div>
             </figure>
@@ -43,8 +44,45 @@
 
     <main class="container">
         <ul class="vitrine__job">
-            
-            <li>
+
+            <div class="modal__backgroud__dashboard hidden">
+                <div class="modal__dashboard">
+                    <header>
+                        <h1>Atualizar</h1>
+                        <span id="closeModalDelet" class="material-symbols-outlined">close</span>
+                    </header>
+                    <h3>Atualizar dados</h3>
+                    <div class="departAllSelect">
+                        <p>Selecione o modalidade</p>
+                        <select id="modalities">
+                            <option value="">Selecione</option>
+                            <option value="hibrido">hibrido</option>
+                            <option value="presencial">presencial</option>
+                            <option value="home office">home office</option>
+                        </select>
+                    </div>
+
+                    <div class="departAllSelect">
+                        <p>Selecione o nível</p>
+                        <select id="level">
+                            <option value="">Selecione</option>
+                            <option value="estagiario">estagiario</option>
+                            <option value="junior">junior</option>
+                            <option value="pleno">pleno</option>
+                            <option value="sênior">sênior</option>
+                        </select>
+                    </div>
+                    <div class="content">
+                        <div class="footer__delete">
+                            <button id="footer--btnClose--delete">Sim</button>
+                            <button id="footer--btnClose--close">Não</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- <li>
                 <header>
                     <div class="name__job">
                         <h3>João Pereira</h3>
@@ -72,15 +110,12 @@
                     <button id="closeEmp" class="close__employee btn__footer">Demitir</button>
                 </div>
 
-                <div class="unemployed__footer hidden">
-                    <button id="unEmp" class="unemployee btn__footer">Contratar</button>
-                </div>
 
 
+            </li> -->
 
-            </li>
-            
         </ul>
     </main>
 </body>
+
 </html>

@@ -478,6 +478,32 @@ header {
     color: var(--color-others-text);
 }
 
+#retailCard{
+    background-color: var(--color-varejo-back);
+    color: var(--color-varejo-text);
+}
+
+#manufacCard{
+    background-color: var(--color-manufac-back);
+    color: var(--color-manufac-text);
+}
+
+#aeroCard{
+    background-color: var(--color-Aero-back);
+    color: var(--color-Aero-text);
+}
+
+#textilCard{
+    background-color: var(--color-textil-back);
+    color: var(--color-textil-text);
+}
+
+#wholesaleCard{
+    background-color: var(--color-atacado-back);
+    color: var(--color-atacado-text);
+}
+
+
 
 .card__Depart {
     padding: 5px 20px;

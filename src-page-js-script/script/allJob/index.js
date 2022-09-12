@@ -62,6 +62,11 @@ class Company {
             elem.sectors.description == "TI" ? departPrimary.setAttribute("id", "tiCard") :
                 elem.sectors.description == "Alimenticio" ? departPrimary.setAttribute("id", "foodCard") :
                     elem.sectors.description == "Automotiva" ? departPrimary.setAttribute("id", "autoCard") : ""
+                    elem.sectors.description == "Varejo" ? departPrimary.setAttribute("id", "retailCard") : ""
+                    elem.sectors.description == "Textil" ? departPrimary.setAttribute("id", "textilCard") : ""
+                    elem.sectors.description == "Aeroespacial" ? departPrimary.setAttribute("id", "aeroCard") : ""
+                    elem.sectors.description == "Atacado" ? departPrimary.setAttribute("id", "wholesaleCard") : ""
+                    elem.sectors.description == "Manufatura" ? departPrimary.setAttribute("id", "manufacCard") : ""
 
             spanTitle1.innerText = "Nome da empresa:"
             spanContent1.innerText = elem.name
@@ -199,7 +204,26 @@ class Company {
 
 
     }
+
+    static closeUser() {
+        const close = document.querySelector("figure")
+        const menuExit = document.querySelector(".scroolProfile")
+        const exit = document.querySelector("#exitProfile")
+
+
+
+
+        close.addEventListener("click", () => {
+            menuExit.classList.toggle("hidden")
+            exit.addEventListener("click", () => {
+                window.location.assign("../../index.html")
+            })
+        })
+
+
+    }
 }
 
 Company.listCompany()
 Company.sectionsPage()
+Company.closeUser()

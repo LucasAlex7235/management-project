@@ -120,7 +120,10 @@ class Users {
             }
         })
 
-        btnNot.addEventListener("click", ()=> modal.classList.toggle("hidden"))
+        btnNot.addEventListener("click", ()=> {
+            modal.classList.toggle("hidden")
+            window.location.reload()
+        })
 
     }
 
@@ -129,7 +132,7 @@ class Users {
         const allCompan = document.querySelector("#allCompanies")
         const allDepart = document.querySelector("#allDepart")
         const allUsers = document.querySelector("#allUsers")
-        const unemployedUsers = document.querySelector("#unemployedUsers")
+        
 
 
         creatCompany.addEventListener("click", (event) => {
@@ -149,9 +152,24 @@ class Users {
             localStorage.setItem("@kenzieJob:AllUsers", true)
         })
 
-        unemployedUsers.addEventListener("click", (event) => {
-            window.location.assign("./hireCompany.html")
-            localStorage.setItem("@kenzieJob:AllUsers", false)
+        
+
+
+    }
+
+    static closeUser() {
+        const close = document.querySelector("figure")
+        const menuExit = document.querySelector(".scroolProfile")
+        const exit = document.querySelector("#exitProfile")
+
+
+
+
+        close.addEventListener("click", () => {
+            menuExit.classList.toggle("hidden")
+            exit.addEventListener("click", () => {
+                window.location.assign("../../index.html")
+            })
         })
 
 
@@ -161,3 +179,4 @@ class Users {
 
 Users.listUsers()
 Users.sectionsPage()
+Users.closeUser()
