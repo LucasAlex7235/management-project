@@ -79,8 +79,20 @@ class Dashboard {
 
 
     }
+
+    static openMenuMobileUser(){
+        const menuMobile = document.querySelector("#menuMobile")
+        const menu = document.querySelector("#mobileOptions")
+        console.log(menuMobile)
+
+        menuMobile.addEventListener("click", ()=>{
+            menu.classList.toggle("hidden")
+            menuMobile.innerText == "Menu"? menuMobile.innerText = "Close": menuMobile.innerText = "Menu"
+        })
+    }
 }
 
 Dashboard.createCompany()
 Dashboard.sectionsPage()
 Dashboard.closeUser()
+Dashboard.openMenuMobileUser()

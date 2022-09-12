@@ -1,0 +1,313 @@
+header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.container__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90vw;
+    height: 50px;
+    margin: 0 auto;
+}
+
+.container__nav figure {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.container__nav figure img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.container__nav figure .scroolProfile {
+    position: absolute;
+    left: 0;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    background-color: var(--color-menu-mobile);
+    top: 78px;
+    height: 150px;
+    justify-content: center;
+    width: 50%;
+    align-items: center;
+    border-radius: 0 8px 8px 0;
+    animation: profileMobileOpen .50s ease;
+
+}
+
+.container__nav #mobileOptions {
+    position: absolute;
+    right: 0;
+    top: 78px;
+    height: 400px;
+    width: 50%;
+    background-color: var(--color-menu-mobile);
+    padding: 20px 10px;
+    border-radius: 8px 0 0 8px;
+    display: flex;
+    z-index: 1;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    animation: menuMobileOpen .50s ease;
+}
+
+@keyframes menuMobileOpen {
+    0% {
+        height: 0;
+        top: 0;
+
+        transform: translateX(120%);
+
+    }
+}
+
+@keyframes profileMobileOpen {
+    0% {
+        height: 0;
+        top: 0;
+        transform: translateX(-120%);
+
+    }
+}
+
+
+
+.hidden {
+    display: none !important;
+}
+
+
+.container {
+    margin: 0 auto;
+    background-color: var(--ligth-gray);
+    height: 90vh;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.vitrine__job {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 50px 0;
+    gap: 28px;
+    height: 100%;
+    overflow: auto;
+}
+
+
+.vitrine__job li {
+    background-color: var(--white);
+    width: 80%;
+    padding: 20px 20px;
+    border-radius: var(--radius);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.vitrine__job li header {
+    display: flex;
+    height: 40px;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--ligth-gray);
+    margin-bottom: 20px;
+}
+
+.vitrine__job li .employee__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.vitrine__job li .unemployed__footer {
+    display: flex;
+    justify-content: center;
+}
+
+.container__content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.container__content .colunm {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+
+
+/*----TEXT--------------*/
+
+.container__nav figure h1 {
+    font-size: var(--font-size-text);
+    font-weight: var(--font-weigth);
+    font-family: var(--font-family);
+}
+
+.container__nav #mobileOptions li {
+    font-size: var(--font-size-text);
+    font-weight: var(--font-weigth);
+    font-family: var(--font-family);
+    color: var(--white);
+}
+
+.name__job h3 {
+    font-size: var(--font-size-text);
+    font-weight: var(--font-weigth);
+}
+
+.colunm .colunm__title {
+    font-size: var(--font-size-text);
+    color: var(--dark-gray);
+    font-family: var(--font-family);
+}
+
+.colunm .colunm__content {
+    font-size: var(--font-size-text2);
+    font-family: var(--font-family);
+}
+
+#tiCard {
+    background-color: var(--color-ti-back);
+    color: var(--color-ti-text);
+}
+
+#foodCard {
+    background-color: var(--color-food-back);
+    color: var(--color-food-text);
+}
+
+#othersCard {
+    background-color: var(--color-others-back);
+    color: var(--color-others-text);
+}
+
+
+.card__Depart {
+    padding: 5px 20px;
+    border-radius: var(--radius2);
+    font-size: var(--font-size-text2);
+    font-weight: var(--font-weigth);
+    font-family: var(--font-family);
+}
+
+
+/*----BUTTON--------------*/
+
+
+.container__nav figure .scroolProfile button {
+    border: 1px solid transparent;
+    background-color: transparent;
+    color: var(--white);
+
+    font-size: var(--font-size-text2);
+    font-weight: var(--font-weigth);
+    font-family: var(--font-family);
+}
+
+
+
+
+
+@media (min-width: 768px) {
+    .container__nav figure {
+        margin-right: 20px;
+        width: 181px;
+    }
+
+    .container__nav #mobileOptions {
+        display: flex !important;
+        position: static;
+        flex-direction: row;
+        justify-content: flex-end;
+        gap: 20px;
+        align-items: center;
+
+        height: auto;
+        width: 100%;
+        background-color: transparent;
+        padding: 20px 10px;
+        border-radius: 8px 0 0 8px;
+
+
+
+        animation: none;
+    }
+
+
+    .container__nav #mobileOptions li {
+        font-size: var(--font-size-text);
+        font-weight: var(--font-weigth2);
+        font-family: var(--font-family);
+        color: var(--dark-black);
+        margin-right: 15px;
+        position: relative;
+    }
+
+    .container__nav #mobileOptions li:hover {
+        cursor: pointer;
+        color: var(--color-primary);
+        transition: .3s;
+    }
+
+    .container__nav #mobileOptions li::before {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        width: 0;
+        height: 2px;
+        background-color: var(--color-primary);
+        transition: .3s ease-in-out;
+    }
+
+    #select {
+        color: var(--color-primary) !important;
+    }
+
+    #select::before {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        width: 100% !important;
+        height: 2px;
+        background-color: var(--color-primary);
+        transition: .3s ease-in-out;
+    }
+
+    .container__nav #mobileOptions li:hover::before {
+        width: 100%;
+    }
+
+
+    .container__nav #menuMobile {
+        display: none;
+    }
+
+    .vitrine__job {
+        width: 90%;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .vitrine__job li {
+        width: 614px;
+    }
+
+
+}

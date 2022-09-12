@@ -184,8 +184,20 @@ class Departments {
 
 
     }
+
+    static openMenuMobileUser(){
+        const menuMobile = document.querySelector("#menuMobile")
+        const menu = document.querySelector("#mobileOptions")
+        console.log(menuMobile)
+
+        menuMobile.addEventListener("click", ()=>{
+            menu.classList.toggle("hidden")
+            menuMobile.innerText == "Menu"? menuMobile.innerText = "Close": menuMobile.innerText = "Menu"
+        })
+    }
 }
 
 Departments.listDepart()
 Departments.sectionsPage()
 Departments.closeUser()
+Departments.openMenuMobileUser()

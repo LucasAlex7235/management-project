@@ -222,8 +222,20 @@ class Company {
 
 
     }
+
+    static openMenuMobileUser(){
+        const menuMobile = document.querySelector("#menuMobile")
+        const menu = document.querySelector("#mobileOptions")
+        console.log(menuMobile)
+
+        menuMobile.addEventListener("click", ()=>{
+            menu.classList.toggle("hidden")
+            menuMobile.innerText == "Menu"? menuMobile.innerText = "Close": menuMobile.innerText = "Menu"
+        })
+    }
 }
 
 Company.listCompany()
 Company.sectionsPage()
 Company.closeUser()
+Company.openMenuMobileUser()
