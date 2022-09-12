@@ -79,6 +79,136 @@ header {
     }
 }
 
+/* ----MODAL / CONTRATAR----- */
+
+.modal__backgroud__dashboard {
+    position: absolute;
+    height: 100vh;
+    width: 100vw;
+    z-index: 1;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background-color: rgba(24, 23, 23, 0.514);
+}
+
+.modal__backgroud__dashboard .modal__dashboard {
+    background-color: var(--white);
+    width: 80%;
+    height: 200px;
+    min-height: 167px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-bottom: 20px;
+    border-radius: var(--radius);
+    animation: modalOpenAnimation 1s ease;
+    position: relative;
+}
+
+.modal__backgroud__dashboard .modal__dashboard header {
+    background-color: var(--color-primary);
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 50px;
+    border-radius: var(--radius) var(--radius) 0px 0px;
+
+}
+
+.modal__backgroud__dashboard .modal__dashboard header h1 {
+    font-size: var(--font-size-text);
+    font-weight: var(--font-weigth);
+    font-family: var(--font-family);
+}
+
+
+.modal__backgroud__dashboard .modal__dashboard>h3 {
+    padding: 0 20px;
+    font-weight: var(--font-weigth);
+    font-family: var(--font-family);
+}
+
+.modal__backgroud__dashboard .modal__dashboard .departAllSelect{
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    font-size: var(--font-size-text2);
+    font-family: var(--font-family);
+}
+
+.modal__backgroud__dashboard .modal__dashboard .departAllSelect select{
+    outline: none;
+}
+
+.modal__backgroud__dashboard .modal__dashboard .content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    padding: 0 20px;
+    height: auto;
+
+    font-size: var(--font-size-text2);
+    font-family: var(--font-family);
+}
+
+
+
+.modal__backgroud__dashboard .modal__dashboard .footer__delete {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    gap: 20px;
+}
+
+.modal__backgroud__dashboard .modal__dashboard .footer__delete #footer--btnClose--delete{
+    height: 25px;
+    padding: 0 20px;
+    background-color: var(--white);
+    color: var(--modal-green);
+    border: 1px solid var(--modal-green);
+    font-weight: var(--font-weigth);
+    border-radius: var(--radius2);
+    cursor: pointer;
+    transition: .5s;
+}
+
+.modal__backgroud__dashboard .modal__dashboard .footer__delete #footer--btnClose--close {
+    height: 25px;
+    padding: 0 20px;
+    background-color: var(--white);
+    color: var(--color-closeEmp-back);
+    border: 1px solid var(--color-closeEmp-back);
+    font-weight: var(--font-weigth);
+    border-radius: var(--radius2);
+    cursor: pointer;
+    transition: .5s;
+}
+
+.modal__dashboard .footer__delete #footer--btnClose--delete:hover{
+    color: var(--white);
+    background-color: var(--modal-green);
+    transition: .5s;
+}
+.modal__backgroud__dashboard .modal__dashboard .footer__delete #footer--btnClose--close:hover{
+    color: var(--white);
+    background-color: var(--color-closeEmp-back);
+    transition: .5s;
+}
+
+@keyframes modalOpenAnimation {
+    0% {
+        transform: translateY(-200%);
+    }
+}
+
+/*-----------------------------*/
+
+
 .hidden {
     display: none !important;
 }
@@ -145,9 +275,6 @@ header {
     display: flex;
     justify-content: space-between;
 }
-
-
-
 
 
 
@@ -335,22 +462,12 @@ header {
         width: 614px;
     }
 
-    .modal__dashboard {
+    .modal__backgroud__dashboard .modal__dashboard  {
         width: 614px;
-        height: 500px;
+        height: 200px;
     }
 
-    .modal__dashboard .content {
-        height: 321px;
-    }
-
-
-    .modal__backgroud__dashboard--create__depart .modal__dashboard {
-        width: 614px;
-        height: auto
-    }
-
-    .modal__backgroud__dashboard--create__depart .modal__dashboard .content {
+    .modal__backgroud__dashboard  .modal__dashboard .content {
         height: auto;
     }
 

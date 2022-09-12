@@ -12,8 +12,8 @@
     <!-- LOCAL/CSS -->
     <link rel="stylesheet" href="../style/hireCompany.css">
     <!-- SCRIPT -->
-    <!-- <script defer type="module" src="../script/company/index.js"></script>
-    <script defer type="module" src="../script/company/api.js"></script> -->
+    <script defer type="module" src="../script/hireCompany/api.js"></script>
+    <script defer type="module" src="../script/hireCompany/index.js"></script>
     
     <title>Document</title>
 </head>
@@ -43,13 +43,38 @@
 
     <main class="container">
         <ul class="vitrine__job">
+
+            <div class="modal__backgroud__dashboard hidden">
+                <div class="modal__dashboard">
+                    <header>
+                        <h1>Contratar</h1>
+                        <span id="closeModalDelet" class="material-symbols-outlined">close</span>
+                    </header>
+                    <h3>Deseja deletar departamento?</h3>
+                    <div class="departAllSelect">
+                        <p>Selecione o departamento</p>
+                        <select id="departOptions">
+                            <option value="">Selecione</option>
+                            <!-- <option value="">2</option>
+                            <option value="">jns</option>
+                            <option value="">dsds</option>
+                            <option value="">sdds</option> -->
+                        </select>
+                    </div>
+                    <div class="content">
+                        <div class="footer__delete">
+                            <button id="footer--btnClose--delete">Sim</button>
+                            <button id="footer--btnClose--close">Não</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             
             <li>
                 <header>
                     <div class="name__job">
                         <h3>João Pereira</h3>
                     </div>
-                    <span id="tiCard" class="card__Depart">TI</span>
                 </header>
                 <div class="container__content">
                     <div class="colunm">
@@ -67,10 +92,10 @@
 
                 </div>
 
-                <div class="employee__footer hidden">
+                <!-- <div class="employee__footer hidden">
                     <button id="attEmp" class="att__employee btn__footer">Atualizar</button>
                     <button id="closeEmp" class="close__employee btn__footer">Demitir</button>
-                </div>
+                </div> -->
 
                 <div class="unemployed__footer">
                     <button id="unEmp" class="unemployee btn__footer">Contratar</button>

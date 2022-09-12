@@ -17,6 +17,18 @@ export class Request {
 
         return list
     }
+
+    static async newListSectors(){
+        const sectors = await fetch(`${this.baseUrl}/sectors`,{
+            method: "GET",
+            headers: this.headers
+        })
+        .then(res => res.json())
+        .then(res => res)
+        .catch(err => err)
+
+        return sectors
+    }
     
     static async newCreateCompany(body) {
         const create = await fetch(`${this.baseUrl}/companies`, {

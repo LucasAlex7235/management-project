@@ -4,7 +4,9 @@ class Users {
     static async listUsers() {
         const users = await Request.newListUsers()
         users.forEach(user => {
-            console.log(user)
+            if(user.department_uuid){
+                
+            }
         });
     }
 

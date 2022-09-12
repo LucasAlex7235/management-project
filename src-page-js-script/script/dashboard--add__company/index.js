@@ -1,7 +1,7 @@
 import {Request} from "./api.js"
 
 class Dashboard {
-    static createCompany() {
+    static async createCompany() {
         const name = document.querySelector("#nameCompany")
         const description = document.querySelector("#descripCompany")
         const hours = document.querySelector("#hoursCompany")
@@ -12,17 +12,24 @@ class Dashboard {
 
         select.addEventListener("change", (event) => value = event.target.value)
 
+        const listSectors = await Request.newListSectors()
+
+            listSectors.forEach(elem => {
+                const options = document.createElement("option")
+                options.value = elem.uuid
+                options.innerText = elem.description
+                select.append(options)
+            });
+
+
         btnSubmit.addEventListener("click", async(event) => {
             event.preventDefault()
-            const listSectors = await Request.listCompany()
-
-            listSectors.forEach(elem => elem.sectors.description == value? depart = elem.sectors.uuid: "")
-
+        
             const data = {
                 "name": name.value,
                 "opening_hours": `${hours.value}:00`,
                 "description": description.value,
-                "sector_uuid": depart
+                "sector_uuid": value
             }
             const creatCompany = await Request.newCreateCompany(data)
         })
